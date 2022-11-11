@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+    <title>Tattoo</title>
+     <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">  -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="profile">
+<div class="container">
+
+    <div class="top">
+        <h2 class="headerOne"><span></span>Want Your Next Tattoo?</h2>
+        <p class="pTag">Book Your Next Appointment Below!</p>
+      <a class="logout" href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+       
+        <div class="col-sm-6">
+             <!-- <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div> -->
+        </div>
+        <div class="col-sm-6">
+          
+
+          <h2 class="appointmentHere">Book Your Appointment Here: </h2>
+        <% if (user.local.email) { %>
+          <form class="book" action="/messages
+          " method="POST">
+            <label for="email">Email: </label>
+            <input for-="email" type="text" value="<%= user.local.email %>" name="name">
+
+            <label for="fullName">Full Name:</label>
+            <input for="fullName" type="text" name="fullname">
+
+            <label for="dayOf">Date: </label>
+            <input for="dayOf" type="date" name="date">
+
+            <label for="notes">Additional Notes: </label>
+            <input for="notes" type="text" placeholder="message" name="msg">
+
+            <label for="placement">Placement of Tattoo:</label>
+            <select for="placement" name="placement">
+              <option>Ankle</option>
+              <option>Wrist</option>
+              <option>Hip</option>
+              <option>Forearm</option>
+              <option>Upper Arm</option>
+              <option>Back Shoulder</option>
+              <option>Fingers</option>
+              <option>Toes</option>
+              <option>Collarbone</option>
+              <option>Neck</option>
+              <option>Ribcage</option>
+              <option>Upperback</option>
+              <option>Back of Neck</option>
+              <option>Thigh</option>
+              <option>Behind Ear</option>
+            </select>
+            
+            <label for="sizeOfTat">Size of Tattoo: </label>
+            <select for="sizeOfTat" name="size">
+              <option>Small</option>
+              <option>Medium</option>
+              <option>Large</option>
+            </select>
+            
+    
+
+            <button type="submit">Submit</button>
+          </form>
+          
+          
+          
+          
+          <h3 class="booked">Booked Appointments:</h3>
+          <ul class="messages">
+          <% for(var i=0; i<messages.length; i++) {%>
+            <li class="message" id="<%= messages[i]._id %>">
+              <span><%= messages[i].name %></span>
+              <span>Name: <%= messages[i].fullname %></span>
+              <span>Date: <%= messages[i].date %></span>
+              <span>
+              <input class="notes" value="<%= messages[i].msg %>">
+              <i class="fa fa-pencil-square-o notes" aria-hidden="true"></i></span>
+              <span>Placement: <%= messages[i].placement %></span>
+              <span> Size of Tattoo: <%= messages[i].size %></span>
+             <span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+             
+            </li>
+          <% } %>
+          </ul>
+        </div>
+        <% } %>
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
