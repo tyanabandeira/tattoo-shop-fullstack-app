@@ -1,4 +1,4 @@
-## Tattoo Shop
+## :arrow_forward:Tattoo Shop
 
 This is a full stack app where users are able to book an appointment to get a tattoo.
 
